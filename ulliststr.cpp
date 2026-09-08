@@ -167,7 +167,7 @@ std::string* ULListStr::getValAtLoc(size_t loc) const {
   }
   Item* temp = head_;
   while (temp != NULL) {
-    int count = temp->last - temp->first;
+    size_t count = temp->last - temp->first;
     if (loc < count) {
       return &temp->val[temp->first + loc];
     } else {
@@ -175,4 +175,5 @@ std::string* ULListStr::getValAtLoc(size_t loc) const {
       temp = temp->next;
     }
   }
+  return NULL;
 }
